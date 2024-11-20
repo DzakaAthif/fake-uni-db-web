@@ -1,0 +1,37 @@
+{% include 'top.html' %}
+    <div id="content">
+
+        <form class="pure-form pure-form-stacked login" method="POST" action="{{ url_for('extension') }}">
+            <h2>Assign Position</h2>
+            <h4>Note: Fill in the form below before pressing submit. Both the staff name and staff position have to be filled.</h4>
+            <select name="id" placeholder="Staff ID" required>
+                <option value="" disabled selected hidden>Staff</option>
+                {% for staff in staffs1 %}
+                <option value="{{ staff[0] }}">{{ staff[0] }}, {{ staff[1] }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" name="pos" placeholder="Position" required>
+            <input class="pure-button pure-button-primary" type="submit">
+        </form>
+    </div>
+    <div id="container">
+        <h1 class="page-title">Staff Position</h1>
+        <table class="pure-table">
+            <thead>
+                <tr><th>Staff ID</th><th>Staff Name</th><th>Position</th>
+            </thead>
+            <tbody>
+                
+                {% for staff in staffs2 %}
+                    <tr>
+						<td> {{staff[0]}}</td>
+                        <td> {{staff[1]}} </td>
+                        <td> {{staff[2]}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

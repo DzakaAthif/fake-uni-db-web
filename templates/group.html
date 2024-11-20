@@ -1,0 +1,36 @@
+{% include 'top.html' %}
+<div id="content">
+    <div id="container">
+        <h1 class="page-title">Number of Unit Offerings per Textbook</h1>
+        <table class="pure-table">
+            <thead>
+                <tr><th>Textbook</th><th>Number of Unit Offerings</th>
+            </thead>
+            <tbody>
+                <!-- This part is really important,
+                        it loops through every row in
+                        the 'units of study' rows
+                        returned from our query
+
+
+						NOTE: the order of your select matters.
+						e.g. SELECT column1, column2 
+
+						will be column1 = unit[0], column2 = unit[1]
+
+						BUT if I do: SELECT column2, column1
+
+						then column2 = unit[0], column1 = unit[1]!!!
+                -->
+                {% for row in groups %}
+                    <tr>
+						<td> {{row[0]}}</td>
+                        <td> {{row[1]}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

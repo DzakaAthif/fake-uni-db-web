@@ -1,0 +1,24 @@
+{% include 'top.html' %}
+<div id="content">
+    <div id="container">
+        <h1 class="page-title">Search Result for {{textbook}}</h1>
+        <table class="pure-table">
+            <thead>
+                <tr><th>UOS Code</th><th>Semester</th><th>Year</th><th>UOS Name</th>
+            </thead>
+            <tbody>
+                
+                {% for unit in uof %}
+                    <tr>
+						<td> {{unit[0]}}</td>
+                        <td> {{unit[1]}} </td>
+                        <td> {{unit[2]}} </td>
+                        <td> {{unit[3]}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

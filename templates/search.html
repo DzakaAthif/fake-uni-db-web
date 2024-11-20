@@ -1,0 +1,12 @@
+{% include 'top.html' %}
+    <div id="content">
+       
+        <form class="pure-form pure-form-stacked login" method="POST" action="{{ url_for('search') }}">
+            <h2>Search Unit Offerings Based On Textbook</h2>
+			<h4>Note: Type the textbook name below and press submit<h4>
+            <input type="text" name="textbook" placeholder="Textbook Name" required>
+            <input class="pure-button pure-button-primary" type="submit">
+        </form>
+    </div>
+</body>
+</html>
